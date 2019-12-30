@@ -24,8 +24,8 @@ gem 'jbuilder', '~> 2.7'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-# gem 'nokogiri'
-# gem 'httparty', '~> 0.17.3'
+gem 'nokogiri'
+gem 'httparty', '~> 0.17.3'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
