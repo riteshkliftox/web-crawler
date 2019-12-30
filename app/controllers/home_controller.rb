@@ -10,5 +10,4 @@ class HomeController < ApplicationController
   rescue StandardError => e
     flash[:error] = e
   end
-
 end
