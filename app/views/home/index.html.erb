@@ -15,5 +15,20 @@
 </div>
 
 <% if @website.present? %>
-  <%= @website%>
+  <div class="row col-md-12">
+    <div class="col-md-1"></div>
+    <div class="col">
+      <br>
+      <b>URL:</b> <%= @website.host_url %>
+      <br/>
+      <b>Total Sub links:</b> <%= @website.total_sub_links %>
+      <br>
+      <b>Sub-links:</b>
+      <ul>
+        <% @website.sub_links.each do |link| %>
+          <li><%= link_to link, (@website.host_url+link), target: '_blank' %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 <% end %>

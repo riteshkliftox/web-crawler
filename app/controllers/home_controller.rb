@@ -4,10 +4,9 @@ class HomeController < ApplicationController
   require 'nokogiri'
 
   def index
-    url = 'https://www.bbc.co.uk'
-    # url.last('//')
-    # url = 'https://www.digitalocean.com'
-    @website = Website.crawl_website(url)
+    url = params[:domain].delete_suffix('/')
+
+    @website = Website.crawl_website(url) if url.present?
   rescue StandardError => e
     flash[:error] = e
   end

@@ -7,13 +7,14 @@ class Website < ApplicationRecord
 
     links = parsed_url_details.css('a').map { |link| link['href'] }
 
-    sub_links = extract_links(links)
+    sub_links = extract_links(url, links)
 
     add_or_update_record(url, sub_links)
   end
 
-  def self.extract_links(links)
+  def self.extract_links(url, links)
     sub_links = []
+
     links.map do |link|
       if link.include?(url)
         splited_links = link.split(url)
