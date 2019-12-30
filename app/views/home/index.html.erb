@@ -1,4 +1,19 @@
-<h1>Home</h1>
-<div class="col-md-8">
-  <%= @sub_links%>
+<div class="row">
+  <div class="col-md-12 crawler-form">
+    <%= form_tag '/' do %>
+      <div class="form-row">
+    <div class="col-md-1"></div>
+    <div class="col-md-8">
+      <%= url_field_tag :domain, '', placeholder: 'https://example.com', class: 'form-control' %>
+    </div>
+    <div class="col">
+      <%= submit_tag 'add domain', class: 'btn btn-primary' %>
+    </div>
+  </div>
+    <% end %>
+  </div>
 </div>
+
+<% if @website.present? %>
+  <%= @website%>
+<% end %>
